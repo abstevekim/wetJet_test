@@ -5,9 +5,13 @@
 		SessionInfo sessionInfo = new SessionInfo();
 		
 		try {
+			
+				JSONObject resultJsonObject = new JSONObject();
 				java.math.BigDecimal result_value = new BigDecimal(num_1.floatValue()).add(new BigDecimal(num_2.floatValue()));
 		
-				sessionInfo.setSessionInfoWithOK(null, "result", result_value);
+				resultJsonObject.put("result_value", result_value);
+			
+				sessionInfo.setSessionInfoWithOK(null, "result", resultJsonObject);
 		
 				
 		} catch(Exception ex) {
